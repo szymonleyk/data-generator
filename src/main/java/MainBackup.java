@@ -1,7 +1,6 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class MainBackup {
     private static final Scanner scanner = new Scanner(System.in);
     private static final StreetsNr streetsList = new StreetsNr();
 
