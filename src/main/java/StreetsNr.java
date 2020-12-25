@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-
 public class StreetsNr {
 
     public ArrayList<String> streetsList = new ArrayList<String>();

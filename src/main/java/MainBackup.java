@@ -17,7 +17,7 @@ public class MainBackup {
         printInstructions();
 
         while (quit) {
-            System.out.println("Enter your choice:");
+            System.out.print("Enter your choice:");
             choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -60,7 +60,6 @@ public class MainBackup {
                 lists.streetsList.add(line);
             }
 
-            System.out.println("End.");
         } finally {
             if (is != null) {
                 is.close();
