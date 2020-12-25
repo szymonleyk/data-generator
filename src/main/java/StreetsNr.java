@@ -1,23 +1,25 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class StreetsNr {
 
     public ArrayList<String> streetsList = new ArrayList<String>();
-
     Random rand = new Random();
+    Scanner s = new Scanner(System.in);
 
     //Draws random number of streets from the ArrayList.
-    public void drawStreets() {
+    public void drawStreetsFromList() {
+
+        System.out.println("Enter the number of streets to be drawed:");
         Random r = new Random();
-        int pos = streetsList.indexOf(r);
+        int num = s.nextInt();
+        r.nextInt(num);
+        int pos = streetsList.indexOf(num);
         System.out.println(pos);
+        System.out.println(streetsList.get(num));
+
     }
 
     public void addStreetName(String strName) {

@@ -4,12 +4,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
+
 public class MainBackup {
     private static final Scanner scanner = new Scanner(System.in);
     private static final StreetsNr lists = new StreetsNr();
 
     public static void main(String[] args) throws IOException {
-        generateStreetsNames();
+        readStreetsFromFile();
 
         boolean quit = true;
         int choice = 0;
@@ -34,7 +35,7 @@ public class MainBackup {
                     findStreet();
                     break;
                 case 4:
-//                    drawStreet();
+                    lists.drawStreetsFromList();
                     break;
                 case 5:
                     quit = false;
@@ -44,10 +45,10 @@ public class MainBackup {
 
     }
 
-    // Reads list of street from streets.txt and adds them to an ArrayList. -> streetsList
-    public static void generateStreetsNames() throws IOException {
+    // Reads list of streets from streets.txt and adds them to an ArrayList. -> streetsList
+    public static void readStreetsFromFile() throws IOException {
 
-        InputStream is = StreetsNr.class.getResourceAsStream("streets.txt");
+        InputStream is = StreetsNr.class.getResourceAsStream("/streets.txt");
         try {
 
             BufferedReader file = new BufferedReader(new InputStreamReader(is));
