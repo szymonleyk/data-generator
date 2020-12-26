@@ -1,4 +1,7 @@
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,6 +23,18 @@ public class StreetsNr {
         System.out.println(streetsList.get(num));
 
     }
+
+    //converting ArrayLists to JSON
+//    List<String> foo = new ArrayList<String>();
+//foo.add("A");
+//foo.add("B");
+//foo.add("C");
+//
+//    String json = new Gson().toJson(foo );
+
+//    Other examples
+//    JSONArray jsonA = JSONArray.fromObject(mybeanList);
+//System.out.println(jsonA);
 
     public void addStreetName(String strName) {
 
