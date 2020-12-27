@@ -1,3 +1,6 @@
+import com.google.gson.Gson;
+import org.json.simple.JSONArray;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,7 +30,13 @@ public class MainBackup {
                     break;
                 case 1:
                     lists.printStreetsList();
+
+                    // Convertation of streets.txt to JSON String.
+
+//    String json = new Gson().toJson(lists.streetsList);
+//                    System.out.println(json);
                     break;
+
                 case 2:
                     addName();
                     break;
@@ -36,6 +45,7 @@ public class MainBackup {
                     break;
                 case 4:
                     lists.drawStreetsFromList();
+
                     break;
                 case 5:
                     quit = false;

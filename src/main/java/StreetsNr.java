@@ -1,40 +1,25 @@
-import com.google.gson.Gson;
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class StreetsNr {
 
     public ArrayList<String> streetsList = new ArrayList<String>();
-    Random rand = new Random();
+    Random r = new Random();
     Scanner s = new Scanner(System.in);
 
     //Draws random number of streets from the ArrayList.
     public void drawStreetsFromList() {
 
         System.out.println("Enter the number of streets to be drawed:");
-        Random r = new Random();
-        int num = s.nextInt();
-        r.nextInt(num);
-        int pos = streetsList.indexOf(num);
-        System.out.println(pos);
-        System.out.println(streetsList.get(num));
 
+        int rand = r.nextInt();
+        if (rand <= 0)
+            throw new IllegalArgumentException("bound must be positive");
+        else {
+            System.out.println(streetsList.get(rand));
+        }
     }
-
-    //converting ArrayLists to JSON
-//    List<String> foo = new ArrayList<String>();
-//foo.add("A");
-//foo.add("B");
-//foo.add("C");
-//
-//    String json = new Gson().toJson(foo );
-
-//    Other examples
-//    JSONArray jsonA = JSONArray.fromObject(mybeanList);
-//System.out.println(jsonA);
 
     public void addStreetName(String strName) {
 
