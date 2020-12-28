@@ -12,11 +12,9 @@ public class StreetsNr {
     public void drawStreetsFromList() {
 
         System.out.println("Enter the number of streets to be drawed:");
-
-        int rand = r.nextInt();
-        if (rand <= 0)
-            throw new IllegalArgumentException("bound must be positive");
-        else {
+        int numberOfDraws = s.nextInt();
+        for (int count = 1; count <= numberOfDraws; count++) {
+            int rand = r.nextInt(25000);
             System.out.println(streetsList.get(rand));
         }
     }

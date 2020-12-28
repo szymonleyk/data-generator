@@ -1,16 +1,14 @@
 import com.google.gson.Gson;
 import org.json.simple.JSONArray;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Scanner;
 
 
 public class MainBackup {
     private static final Scanner scanner = new Scanner(System.in);
     private static final StreetsNr lists = new StreetsNr();
+//    public static final FileWriter writer = new FileWriter;
 
     public static void main(String[] args) throws IOException {
         readStreetsFromFile();
