@@ -4,9 +4,13 @@ import java.util.Scanner;
 
 public class StreetsNr {
 
-    public ArrayList<String> streetsList = new ArrayList<String>();
+    private final ArrayList<String> streetsList = new ArrayList<>();
     Random r = new Random();
     Scanner s = new Scanner(System.in);
+
+    public ArrayList<String> getStreetsList() {
+        return streetsList;
+    }
 
     //Draws random number of streets from the ArrayList.
     public void drawStreetsFromList() {
@@ -14,7 +18,7 @@ public class StreetsNr {
         System.out.println("Enter the number of streets to be drawed:");
         int numberOfDraws = s.nextInt();
         for (int count = 1; count <= numberOfDraws; count++) {
-            int rand = r.nextInt(25000);
+            int rand = r.nextInt(20963);
             System.out.println(streetsList.get(rand));
         }
     }

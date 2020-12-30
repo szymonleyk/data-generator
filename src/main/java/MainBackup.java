@@ -1,5 +1,5 @@
-import com.google.gson.Gson;
-import org.json.simple.JSONArray;
+//import com.google.gson.Gson;
+//import org.json.simple.JSONArray;
 
 import java.io.*;
 import java.util.Scanner;
@@ -14,7 +14,7 @@ public class MainBackup {
         readStreetsFromFile();
 
         boolean quit = true;
-        int choice = 0;
+        int choice;
         printInstructions();
 
         while (quit) {
@@ -51,13 +51,13 @@ public class MainBackup {
             }
         }
 
+//            BufferedReader file = new BufferedReader(new InputStreamReader(is));
     }
 
     // Reads list of streets from streets.txt and adds them to an ArrayList. -> streetsList
     public static void readStreetsFromFile() throws IOException {
 
-        InputStream is = StreetsNr.class.getResourceAsStream("/streets.txt");
-        try {
+        try (InputStream is = StreetsNr.class.getResourceAsStream("/streets.txt")) {
 
             BufferedReader file = new BufferedReader(new InputStreamReader(is));
             for (; ; ) {
@@ -65,13 +65,9 @@ public class MainBackup {
                 if (line == null) {
                     break;
                 }
-                lists.streetsList.add(line);
+                lists.getStreetsList().add(line);
             }
 
-        } finally {
-            if (is != null) {
-                is.close();
-            }
         }
     }
 
