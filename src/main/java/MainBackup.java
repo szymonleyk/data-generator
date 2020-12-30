@@ -18,7 +18,7 @@ public class MainBackup {
         printInstructions();
 
         while (quit) {
-            System.out.print("Enter your choice:");
+            System.out.print("Enter your choice (Press 0 - To print choice options):");
             choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -76,13 +76,12 @@ public class MainBackup {
     }
 
     public static void printInstructions() {
-        System.out.println("\nPress ");
-        System.out.println("\t 0 - To print choice options.");
-        System.out.println("\t 1 - To print the list of streets.");
-        System.out.println("\t 2 - To add a street to the list");
-        System.out.println("\t 3 - To search for a street in the list");
-        System.out.println("\t 4 - To generate a number of streets from the list");
-        System.out.println("\t 5 - To quit the application");
+        System.out.println("\nPress 0 - To print choice options\n" +
+                "1 - To print the list of streets.\n" +
+                "2 - To add a street to the list\n" +
+                "3 - To search for a street in the list\n" +
+                "4 - To generate a number of streets from the list\n" +
+                "5 - To quit the application");
     }
 
     public static void addName() {
