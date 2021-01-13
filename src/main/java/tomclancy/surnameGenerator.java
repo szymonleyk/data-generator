@@ -11,8 +11,8 @@ import java.util.Scanner;
 
 public class surnameGenerator {
     private Scanner scanner = new Scanner(System.in);
-    private final ArrayList<String> womenssss = new ArrayList<>(Arrays.asList("ska", "cka", "zka"));
-    private final ArrayList<String> menssss = new ArrayList<>(Arrays.asList("ski", "cki", "zki"));
+    private final ArrayList<String> femaleLetters = new ArrayList<>(Arrays.asList("ska", "cka", "zka"));
+    private final ArrayList<String> maleLetters = new ArrayList<>(Arrays.asList("ski", "cki", "zki"));
     private final ArrayList<String> womenSurnameList = new ArrayList<>();
     private final ArrayList<String> menSurnameList = new ArrayList<>();
     private int number;
@@ -25,12 +25,12 @@ public class surnameGenerator {
 
             String allStrings;
             while ((allStrings = br.readLine()) != null) {
-                if (allStrings.endsWith(womenssss.get(0)) || allStrings.endsWith(womenssss.get(1)) || allStrings.endsWith(womenssss.get(2))) {
+                if (allStrings.endsWith(femaleLetters.get(0)) || allStrings.endsWith(femaleLetters.get(1)) || allStrings.endsWith(femaleLetters.get(2))) {
                     womenSurnameList.add(allStrings);
                 } else {
                     menSurnameList.add(allStrings);
                 }
-                if (allStrings.endsWith(menssss.get(0)) || allStrings.endsWith(menssss.get(1)) || allStrings.endsWith(menssss.get(2))) {
+                if (allStrings.endsWith(maleLetters.get(0)) || allStrings.endsWith(maleLetters.get(1)) || allStrings.endsWith(maleLetters.get(2))) {
                     continue;
                 } else {
                     womenSurnameList.add(allStrings);
