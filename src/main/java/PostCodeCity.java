@@ -1,61 +1,34 @@
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.springframework.core.io.ClassPathResource;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class PostCodeCity {
 
-    private final ArrayList<String> listOfPostCodeCity;
-    private PostCodeCityList postCodeCityList;
-    private final Random random;
-    private JSONArray jsonArray;
+    private static ArrayList<String> importAllPostCodeCity() {
 
-    public PostCodeCity() {
-        listOfPostCodeCity = new ArrayList<>();
-        random = new Random();
-    }
+        InputStream inputStream = PostCodeCity.class.getResourceAsStream("/postCodeCityList.json");
+        ArrayList<String> postCodeCityList = new ArrayList<>();
 
-    public void drawData(int numberOfDrawedValues) throws Exception {
-
-        //Barney style
-        jsonMethod();
-        for (int i = 0; i <= numberOfDrawedValues; i++) {
-            int num = random.nextInt(getPostCodeCityList().getPostCodeCityList().size());
-            listOfPostCodeCity.add(getPostCodeCityList().getPostCodeCityList().get(num));
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            postCodeCityList = objectMapper.readValue(inputStream, ArrayList.class);
+        } catch (IOException e){
+            e.printStackTrace();
         }
-        //casual style
-//        jsonMethod();
-//        for (int i = 0; i <= numberOfDrawedValues; i++) {
-//            int num = random.nextInt(jsonArray.size());
-//            listOfPostCodeCity.add(jsonArray.get(num).toString());
-//        }
-    }
-
-    private void jsonMethod() throws Exception {
-        InputStream inputStream = getClass().getResourceAsStream("/postCodeCityList.json");
-
-        //Barney style
-        ObjectMapper objectMapper = new ObjectMapper();
-        postCodeCityList = objectMapper.readValue(inputStream, PostCodeCityList.class);
-
-//        //casual style
-//        JSONParser jsonParser = new JSONParser();
-//        JSONObject jsonObject = (JSONObject) jsonParser.parse(new InputStreamReader(inputStream));
-//        jsonArray = (JSONArray) jsonObject.get("postCodeCityList");
-    }
-
-    public final PostCodeCityList getPostCodeCityList(){
         return postCodeCityList;
     }
 
-    public final ArrayList<String> getDrawedListOfPostCodeCity(){
-        return listOfPostCodeCity;
+    public static ArrayList<String> generatePostCodeCity(int numberOfDrawedValues) {
+        ArrayList<String> listOfPostCodeCity= new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i <= numberOfDrawedValues; i++) {
+            int num = random.nextInt(importAllPostCodeCity().size());
+            listOfPostCodeCity.add(importAllPostCodeCity().get(num));
+        }
+    return listOfPostCodeCity;
     }
+
 }
