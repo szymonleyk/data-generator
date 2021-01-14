@@ -8,13 +8,16 @@ public class Main {
         //e. g. ExampleClass className2 = new ExampleClass(numberOfDraws);
 
 
+
         //methods placement area
         //e.g. className.setNumberOfDraws(numberOfDraws);
         //e.g. className.getNames(numberOfDraws);
 
+
+
         //Print area
         //e.g. System.out.println(clasName.getDraws);
-        System.out.println(PostCodeCity.generate(15));
+        System.out.println(PostCodeCity.generatePostCodeCity(15));
     }
 
 }
