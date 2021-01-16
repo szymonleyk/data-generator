@@ -57,7 +57,7 @@ public class MainBackup {
     // Reads list of streets from streets.txt and adds them to an ArrayList. -> streetsList
     public static void readStreetsFromFile() throws IOException {
 
-        try (InputStream is = StreetsNr.class.getResourceAsStream("/streets.txt")) {
+        try (InputStream is = StreetsNr.class.getResourceAsStream("/streets.json")) {
 
             BufferedReader file = new BufferedReader(new InputStreamReader(is));
             for (; ; ) {

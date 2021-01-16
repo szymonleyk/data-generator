@@ -18,7 +18,7 @@ public class StreetsNr {
         System.out.println("Enter the number of streets to be drawed:");
         int numberOfDraws = s.nextInt();
         for (int count = 1; count <= numberOfDraws; count++) {
-            int rand = r.nextInt(20963);
+            int rand = r.nextInt(4901);
             System.out.println(streetsList.get(rand));
         }
     }
