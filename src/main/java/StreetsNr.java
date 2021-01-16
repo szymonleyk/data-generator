@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
@@ -8,41 +12,45 @@ public class StreetsNr {
     Random r = new Random();
     Scanner s = new Scanner(System.in);
 
-    public ArrayList<String> getStreetsList() {
-        return streetsList;
-    }
 
-    //Draws random number of streets from the ArrayList.
-    public void drawStreetsFromList() {
+    public ArrayList<String> generateStreetsList(int numberToDraw) throws IOException {
+        // Reads list of streets from streets.txt/json and adds them to an ArrayList. -> streetsList
+        try (InputStream is = StreetsNr.class.getResourceAsStream("/streets.json")) {
 
-        System.out.println("Enter the number of streets to be drawed:");
-        int numberOfDraws = s.nextInt();
-        for (int count = 1; count <= numberOfDraws; count++) {
-            int rand = r.nextInt(4901);
-            System.out.println(streetsList.get(rand));
+            BufferedReader file = new BufferedReader(new InputStreamReader(is));
+            for (; ; ) {
+                String line = file.readLine();
+                if (line == null) {
+                    break;
+                }
+                streetsList.add(line);
+            }
+
         }
-    }
 
-    public void addStreetName(String strName) {
+        //The loop will reapeat number of times, each time printing 1 name and 1 number, until count i meet entered numberToDraw.
+        for (int i = 0; i <= numberToDraw ; i++ ) {
 
-        streetsList.add(strName);
+            //Draws random number of streets from the ArrayList.
 
-    }
+            numberToDraw = s.nextInt();
+            for (int count = 1; count <= numberToDraw; count++) {
+                int rand = r.nextInt(4901);
+                System.out.println(streetsList.get(rand));
+            }
 
-    public void printStreetsList() {
-        System.out.println("You have " + streetsList.size() + " streets on your list");
-        for (int i = 0; i < streetsList.size(); i++) {
-            System.out.println((i + 1) + ". " + streetsList.get(i));
+            // wylosowanie jakies liczby nr budynku
+            numberToDraw = s.nextInt();
+            for (int count = 1; count <= numberToDraw; count++) {
+                int rand = r.nextInt(4901);
+                System.out.println(streetsList.get(rand));
+            }
+            // przerobienie na stringa
+            // zlaczenie ulicy z wylosowanym numerem
+            // dodanie do arraylisty (finalnej listy) n.p. listOfStreets
+
+            // return listOfStreets
         }
+
     }
-
-    public String findAStreet(String searchItem) {
-
-        int position = streetsList.indexOf(searchItem);
-        if (position >= 0) { // Because if the .idexOf function will return -1, it will mean that the file don't exists.
-            return streetsList.get(position);
-        }
-        return null;
-    }
-
 }
