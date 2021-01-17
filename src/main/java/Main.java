@@ -1,3 +1,4 @@
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,7 +17,10 @@ public class Main {
 
         //Print area
         //e.g. System.out.println(clasName.getDraws);
-        System.out.println(PostCodeCity.generatePostCodeCity(15));
+        //System.out.println(PostCodeCity.generatePostCodeCity(15));
+        System.out.println(Names.generateNames(15).get(1).getSex());
+        System.out.println(Names.generateNames(15));
+
 
     }
 
