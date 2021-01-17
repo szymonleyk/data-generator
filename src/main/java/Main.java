@@ -7,7 +7,7 @@ public class Main {
         //Class initialization area
         //e.g. ExampleClass className = new ExampleClass();
         //e. g. ExampleClass className2 = new ExampleClass(numberOfDraws);
-
+        Names.generateNames(15);
 
         //methods placement area
         //e.g. className.setNumberOfDraws(numberOfDraws);
@@ -18,8 +18,7 @@ public class Main {
         //Print area
         //e.g. System.out.println(clasName.getDraws);
         //System.out.println(PostCodeCity.generatePostCodeCity(15));
-        System.out.println(Names.generateNames(15).get(1).getSex());
-        System.out.println(Names.generateNames(15));
+        System.out.println(Names.getListOfNames());
 
 
     }

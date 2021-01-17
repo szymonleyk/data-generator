@@ -19,7 +19,7 @@ public class Names {
 
     private String name;
     private int sex;
-
+    private static ArrayList<Names> listOfNames;
 
     public String getName() {
         return name;
@@ -54,12 +54,16 @@ public class Names {
     }
 
     public static ArrayList<Names> generateNames(int numberOfDrawedValues) {
-        ArrayList<Names> listOfNames= new ArrayList<>();
+        listOfNames= new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i <= numberOfDrawedValues; i++) {
             int num = random.nextInt(importAllNames().size());
             listOfNames.add(importAllNames().get(num));
         }
+        return listOfNames;
+    }
+
+    protected static ArrayList<Names> getListOfNames() {
         return listOfNames;
     }
 
