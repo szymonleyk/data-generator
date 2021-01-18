@@ -1,13 +1,10 @@
-
-import java.util.Scanner;
+import java.io.IOException;
 
 public class MainBackup {
-    private static final Scanner scanner = new Scanner(System.in);
-    private static final StreetsNr lists = new StreetsNr();
 
-
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws IOException {
+        StreetsNr test = new StreetsNr();
+        System.out.println(test.generateStreetsList(5));
 
     }
 }

@@ -36,21 +36,26 @@ public class StreetsNr {
             numberToDraw = s.nextInt();
             for (int count = 1; count <= numberToDraw; count++) {
                 int rand = r.nextInt(4901);
-                System.out.println(streetsList.get(rand));
+                System.out.println(streetsList.get(rand).indexOf(rand));
             }
 
-            // wylosowanie jakies liczby nr budynku
+            // wylosowanie nr budynku
+
             numberToDraw = s.nextInt();
             for (int count = 1; count <= numberToDraw; count++) {
                 int rand = r.nextInt(4901);
-                System.out.println(streetsList.get(rand));
+                System.out.println(streetsList.get(rand).indexOf(rand));
             }
-            // przerobienie na stringa
+
             // zlaczenie ulicy z wylosowanym numerem
-            // dodanie do arraylisty (finalnej listy) n.p. listOfStreets
 
-            // return listOfStreets
+
+            // przerobienie na stringa
+
+            // dodanie do arraylisty (finalnej listy)
+
+
         }
-
+        return streetsList;
     }
 }
