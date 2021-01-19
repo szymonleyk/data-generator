@@ -37,7 +37,7 @@ public class PersonBirthdayAndPesel {
 
     @Override
     public String toString() {
-        return "Data urodzenia: " + String.valueOf(localDate) + "\n"
+        return "Data urodzenia: " + String.valueOf(localDate)
                 + "Pesel: " + pesel;
     }
 }
