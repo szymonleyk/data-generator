@@ -21,7 +21,7 @@ public class PostCodeCity {
         return postCodeCityList;
     }
 
-    public static ArrayList<String> generate(int numberOfDrawedValues) {
+    public static ArrayList<String> generatePostCodeCity(int numberOfDrawedValues) {
         ArrayList<String> listOfPostCodeCity= new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i <= numberOfDrawedValues; i++) {
