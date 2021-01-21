@@ -56,7 +56,7 @@ public class Names {
     public static ArrayList<Names> generateNames(int numberOfDrawedValues) {
         listOfNames= new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i <= numberOfDrawedValues; i++) {
+        for (int i = 0; i <= numberOfDrawedValues-1; i++) {
             int num = random.nextInt(importAllNames().size());
             listOfNames.add(importAllNames().get(num));
         }
