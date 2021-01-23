@@ -1,17 +1,10 @@
-ul.  Dywizji Piechoty WP
 ul.  Grudnia
 ul.  Listopada
-ul.  Listopada
-ul.  Maja
 ul.  Maja
 ul.  PP Dzieci Warszawy
 ul.  Praskiego Pułku
-ul.  Praskiego Pułku
-ul.  Sierpnia
-ul.  Sierpnia
 ul.  Sierpnia
 ul.  Stycznia
-ul. A. Asnyka
 ul. A. Asnyka
 ul. A. B. Dobrowolskiego
 ul. A. Bardiniego
@@ -35,7 +28,6 @@ ul. A. Einsteina
 ul. A. Felińskiego
 ul. A. Fleminga
 ul. A. Fontany
-ul. A. Fredry
 ul. A. Fredry
 ul. A. Frycza Modrzewskiego
 ul. A. Gajkowicza

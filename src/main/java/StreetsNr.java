@@ -7,46 +7,55 @@ import java.util.Random;
 
 public class StreetsNr {
 
-    private final ArrayList<String> streetsList = new ArrayList<>(); // Lista do ktorej wczytuje nazwe ulic z JSON'a
-    private final ArrayList<String> newStreetsList = new ArrayList<>(); // Lista do ktorej się zapisują wylosowane ulicy
-    private final Random rand = new Random();
+    private final ArrayList<String> streetsList = new ArrayList<>(); // Lista do ktorej wczytuje nazwe ulic z pliku.
+    private final ArrayList<String> generatedStreetsList = new ArrayList<>(); // Lista do ktorej się zapisują wylosowane ulicy
 
-    public ArrayList<String> generateStreetsList(int numberToDraw) throws IOException {  // Reads list of streets from streets.txt/json and adds them to an ArrayList. -> streetsList
 
-        try (InputStream is = StreetsNr.class.getResourceAsStream("/streets.json")) {
+    public ArrayList<String> readStreetsList() throws IOException {  // Reads list of streets from streets.txt and adds them to an ArrayList. -> streetsList
+
+        try (InputStream is = StreetsNr.class.getResourceAsStream("/streets.txt")) {
 
             BufferedReader file = new BufferedReader(new InputStreamReader(is));
-            for ( ; ; ) {
+            for (; ; ) {
                 String line = file.readLine();
                 if (line == null) {
                     break;
                 }
                 streetsList.add(line);
             }
-
         }
+
+        return streetsList;
+    }
+    // Solution for dublicates:
+    // int[] result = new int[20];
+    //
+    //HashSet<Integer> used = new HashSet<Integer>();
+    //for (int i = 0; i < 20; i++) {
+    //    int add = (int)(Math.random() * 30); //this is the int we are adding
+    //    while (used.contains(add)) { //while we have already used the number
+    //        add = (int) (Math.random() * 30); //generate a new one because it's already used
+    //    }
+    //    //by this time, add will be unique
+    //    used.add(add);
+    //    result[i] = add;
+    //}
+    public ArrayList<String> generateStreetsList(int numberToDraw) {
 
         //The loop will reapeat number of times, each time adding 1 name and 1 number, until count "i" will meet entered numberToDraw.
         for (int i = 1; i <= numberToDraw; i++) {
 
-            //Draws random number of streets from the ArrayList and adding it to a new ArrayList.
-            int rand = numberToDraw;
-            newStreetsList.add(streetsList.get(rand));
-
-            // wylosowanie nr budynku (NIE WIEM JAK ZROBIC LOSOWONIE NUMEROW OSOBNO Z JSON'a)
-
-//            numberToDraw = s.nextInt();
-//            for (int count = 1; count <= numberToDraw; count++) {
-//                int rand = r.nextInt(4901);
-//                System.out.println(streetsList.get(rand).indexOf(rand));
-
-            // zlaczenie ulicy z wylosowanym numereem & przerobienie na stringa
-            // dodanie do arraylisty (finalnej listy)
+            //Draws random number of streets from the ArrayList, then generates a random number
+            // and concatenates two variables then finally adds them to a new ArrayList.
+            Random rand = new Random();
+            int number = rand.nextInt(numberToDraw);
+            int numerBudynku = rand.nextInt(numberToDraw);
+            generatedStreetsList.add(streetsList.get(number) + " " + numerBudynku);
 
         }
 
-        return newStreetsList;
+        return generatedStreetsList;
     }
-
 }
+
 
