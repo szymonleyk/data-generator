@@ -8,11 +8,12 @@ public class Main {
         //e.g. ExampleClass className = new ExampleClass();
         //e. g. ExampleClass className2 = new ExampleClass(numberOfDraws);
         Names.generateNames(15);
-
+        DateAndPeselGenerator dateAndPeselGenerator = new DateAndPeselGenerator();
+        dateAndPeselGenerator.createRandomDate(15);
+        dateAndPeselGenerator.getDate();
         //methods placement area
         //e.g. className.setNumberOfDraws(numberOfDraws);
         //e.g. className.getNames(numberOfDraws);
-
 
 
         //Print area
