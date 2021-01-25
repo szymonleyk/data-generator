@@ -6,7 +6,7 @@ public class MainBackup {
 
         StreetsNr test = new StreetsNr();
         test.readStreetsList();
-        System.out.println(test.generateStreetsList(66));
+        System.out.println(test.generateStreetsList(2));
 
     }
 }
