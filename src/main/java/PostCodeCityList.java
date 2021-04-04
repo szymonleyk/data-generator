@@ -4,11 +4,11 @@ public class PostCodeCityList {
 
     private final ArrayList<String> postCodeCityList;
 
-    public PostCodeCityList(){
+    public PostCodeCityList() {
         postCodeCityList = new ArrayList<>();
     }
 
-public ArrayList<String> getPostCodeCityList(){
+    public ArrayList<String> getPostCodeCityList() {
         return postCodeCityList;
     }
 

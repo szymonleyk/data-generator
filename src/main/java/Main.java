@@ -8,7 +8,8 @@ public class Main {
         //e. g. ExampleClass className2 = new ExampleClass(numberOfDraws);
         PostCodeCity postCodeCity = new PostCodeCity();
 
-
+        StreetNamesGenerator streets = new StreetNamesGenerator();
+        streets.printAllStreets();
 
         //methods placement area
         //e.g. className.setNumberOfDraws(numberOfDraws);

@@ -51,11 +51,11 @@ public class PostCodeCity {
 //        jsonArray = (JSONArray) jsonObject.get("postCodeCityList");
     }
 
-    public final PostCodeCityList getPostCodeCityList(){
+    public final PostCodeCityList getPostCodeCityList() {
         return postCodeCityList;
     }
 
-    public final ArrayList<String> getDrawedListOfPostCodeCity(){
+    public final ArrayList<String> getDrawedListOfPostCodeCity() {
         return listOfPostCodeCity;
     }
 }

@@ -1,5 +1,3 @@
-package mradziewicz;
-
 import java.time.LocalDate;
 
 public class PersonBirthdayAndPesel {
